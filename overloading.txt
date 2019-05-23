@@ -1,0 +1,57 @@
+이번에 과제로 작성한 코드와 실행 예를 이미지파일로 올렸습니다.
+
+아래쪽은 코드의 사본입니다.
+
+ 
+
+#include <iostream>
+
+using namespace std;
+
+class CPnt
+
+{
+
+int x, y;
+
+public:
+
+int Add(int x, int y){ return x+y;}
+
+double Add(double x, double y){ return x+y;}
+
+CPnt Add(CPnt _p){ return(CPnt(x+_p.x,y+_p.y));}
+
+CPnt operator+(CPnt _p){ return(CPnt(x+_p.x,y+_p.y));}
+
+void Pr(){ cout<< "("<<x<<", "<<y<<")"<<endl;}
+
+ 
+
+CPnt(){}
+
+CPnt(int _x, int _y):x(_x),y(_y){}
+
+CPnt(double _x, double _y):x(_x),y(_y){}
+
+};
+
+ 
+
+int main(void)
+
+{
+
+CPnt p1(2,3),p2(3,4),p;
+
+p1.Pr();
+
+p=p1.Add(p2);
+
+p.Pr();
+
+p=p1+p2;
+
+p.Pr();
+
+}
